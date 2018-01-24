@@ -2,7 +2,7 @@ import tensorflow as tf
 
 log_path = "/tmp/logs/"
 
-with name_scope():
+with tf.name_scope(None) as scope:
      x = tf.placeholder(tf.float32,name='x')
      weight = tf.placeholder(tf.float32,name='weight')
      bias = tf.constant(6.0)
