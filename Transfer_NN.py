@@ -29,18 +29,18 @@ logs_path = '/tmp/transfer/logs'
 # Get Tensor by name from Pre-train graph
 x = graph.get_tensor_by_name("InputData:0")
 y = graph.get_tensor_by_name("LabelData:0")
-#loss = tf.get_default_graph().get_tensor_by_name("loss:0")
 h2 = graph.get_tensor_by_name("h2:0")
 
+# Declare new variable to train
 w3 = tf.Variable(tf.truncated_normal([10, 5], stddev=0.1), name='W3')
 b3 = tf.Variable(tf.constant(0.1,shape=[5]), name='B3')
 logits =tf.add (tf.matmul(h2,w3),b3,name='logits')
 pred = tf.nn.softmax(logits)
-# Minimize error using cross entropy
+# Declare new tensor to do loss ans optimizer
 loss = tf.reduce_sum(tf.nn.softmax_cross_entropy_with_logits(logits=logits, labels=y))
 optimizer = tf.train.GradientDescentOptimizer(learning_rate).minimize(loss,var_list=[w3,b3])
 
-# Accuracy
+# Declare new Accuracy
 acc = tf.equal(tf.argmax(pred, 1), tf.argmax(y, 1))
 mean_acc = tf.reduce_mean(tf.cast(acc, tf.float32))
 
