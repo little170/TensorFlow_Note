@@ -1,28 +1,28 @@
 ## 初步認識 Tensorflow
-**Tensor.py**\
+**1. Tensor.py**\
 認識Tensor
 
-**Feed.py**\
+**2. Feed.py**\
 Feed 資料
 
-**Graph.py**\
+**3. Graph.py**\
 利用Tensorboard畫出Graph
 
-**Debug.py**\
+**4. Debug.py**\
 用Debugger得知各Tensor的值
 
-**NN.py**\
+**5. NN.py**\
 Debugger with Neural Network，試著熟悉debugger觀看各Tensor的值\
 structure: 784 node in input layer, 10 node in 1 hidden layer, 10 node in output layer
 
 ## 儲存、恢復、遷移訓練(Transfer Learning)模型
 
-**Simple_store.py & Simple_restore.py**\
+**1. Simple_store.py & Simple_restore.py**\
 簡單的儲存和恢復模型範例
 
-**NN.py** Neural Network範例
+**2. NN.py** Neural Network範例
 
-**Store_NN.py & Restore_NN.py & Transfer_NN.py** NN儲存、恢復、遷移訓練範例\
+**3. Store_NN.py & Restore_NN.py & Transfer_NN.py** NN儲存、恢復、遷移訓練範例\
 structure: 784 node in input layer, 10 node in 3 hidden layer, 5 node in output layer\
 利用sklearn之手寫辨識Dataset\
 Store_NN.py使用Dataset中label 0-4之資料做training\
